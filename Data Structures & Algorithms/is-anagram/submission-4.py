@@ -1,0 +1,18 @@
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        hashS = {}
+        hashT = {} 
+
+        for char in s: 
+            if char in hashS.keys(): 
+                hashS[char] += 1
+            else: 
+                hashS[char] = 1
+
+        for char in t: 
+            if char in hashT.keys(): 
+                hashT[char] += 1
+            else: 
+                hashT[char] = 1
+
+        return hashT == hashS
